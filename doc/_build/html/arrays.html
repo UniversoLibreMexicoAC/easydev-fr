@@ -1,0 +1,351 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Tableaux &#8212; documentation EasyDev 2.0.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Requests" href="requests.html" />
+    <link rel="prev" title="Send mail" href="email.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tableaux">
+<h1>Tableaux<a class="headerlink" href="#tableaux" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="append-ajouter-un-element">
+<h2>Append : Ajouter un élément<a class="headerlink" href="#append-ajouter-un-element" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;Sofia&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-supprimer-un-element">
+<h2>Delete : Supprimer un élément<a class="headerlink" href="#delete-supprimer-un-element" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;Nikole&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extend-etendre-le-tableau">
+<h2>Extend : Etendre le tableau<a class="headerlink" href="#extend-etendre-le-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Sofia&quot;</span><span class="p">,</span> <span class="s">&quot;Anita&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-multiplier">
+<h2>Multi : Multiplier<a class="headerlink" href="#multi-multiplier" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">multi</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unique-valeurs-uniques">
+<h2>Unique : Valeurs uniques<a class="headerlink" href="#unique-valeurs-uniques" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">unique</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reverse-inverser">
+<h2>Reverse : Inverser<a class="headerlink" href="#reverse-inverser" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">reverse</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="insert-inserer-un-element-a-une-position">
+<h2>Insert : Insérer un élément à une position<a class="headerlink" href="#insert-inserer-un-element-a-une-position" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;Mary&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="supprimer-un-element-a-une-position">
+<h2>Supprimer un élément à une position<a class="headerlink" href="#supprimer-un-element-a-une-position" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s">&quot;Two&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">data</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">)</span>  <span class="c">&#39;Tableau sans l&#39;élément supprimé</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">data</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>  <span class="c">&#39;Elément supprimé</span>
+</pre></div>
+</div>
+<p>Supprimer le premier élément trouvé</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Supprimer tous les éléments trouvés</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="len-taille-du-tableau">
+<h2>Len : Taille du tableau<a class="headerlink" href="#len-taille-du-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-compter-un-nombre-d-elements-du-tableau">
+<h2>Count : Compter un nombre d’éléments du tableau<a class="headerlink" href="#count-compter-un-nombre-d-elements-du-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;Uno&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;Uno&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="index-index-d-un-element-du-tableau">
+<h2>Index : Index d’un élément du tableau<a class="headerlink" href="#index-index-d-un-element-du-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;Naomi&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;Monica&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="max-min-and-average-max-min-et-moyenne">
+<h2>Max, Min and Average : Max, Min et moyenne<a class="headerlink" href="#max-min-and-average-max-min-et-moyenne" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">average</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sum-addition">
+<h2>Sum : Addition<a class="headerlink" href="#sum-addition" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Only sum values, the first element is string</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;10&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="s">&quot;One&quot;</span><span class="p">,</span> <span class="s">&quot;Two&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exists-test-si-un-element-existe-dans-le-tableau">
+<h2>Exists : Test si un élément existe dans le tableau<a class="headerlink" href="#exists-test-si-un-element-existe-dans-le-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s">&quot;One&quot;</span><span class="p">,</span><span class="s">&quot;Seven&quot;</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;One&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;Two&quot;</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="equal-test-d-egalite-entre-deux-tableaux">
+<h2>Equal : Test d’égalité entre deux tableaux<a class="headerlink" href="#equal-test-d-egalite-entre-deux-tableaux" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">:</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">equal</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">&quot;Dos&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">:</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s">&quot;Tres&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">util</span><span class="p">.</span><span class="n">equal</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="slice-copie">
+<h2>Slice : Copie<a class="headerlink" href="#slice-copie" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Recopie d’un tableau dans un autre tableau</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">,</span><span class="s">&quot;Sofia&quot;</span><span class="p">,</span><span class="s">&quot;Anita&quot;</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;[:]&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a2</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Les deux premiers éléments</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;[:2]&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a2</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Les deux derniers éléments</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;[-2:]&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a2</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Copie partielle</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;[2:-2]&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a2</span> <span class="p">)</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;[::2]&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a2</span> <span class="p">)</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;[1::2]&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a2</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Copie inversée</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;[::-1]&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a2</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sorted-tri-de-tableau">
+<h2>Sorted : Tri de tableau<a class="headerlink" href="#sorted-tri-de-tableau" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Tri d’un tableau à une dimension</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Nikole&quot;</span><span class="p">,</span><span class="s">&quot;Scarlett&quot;</span><span class="p">,</span><span class="s">&quot;Monica&quot;</span><span class="p">,</span><span class="s">&quot;Naomi&quot;</span><span class="p">,</span><span class="s">&quot;Marion&quot;</span><span class="p">,</span><span class="s">&quot;Sofia&quot;</span><span class="p">,</span><span class="s">&quot;Anita&quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Tri d’un tableau à plusieurs dimensions</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="mi">56</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;z&quot;</span><span class="p">,</span> <span class="mi">43</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;g&quot;</span><span class="p">,</span> <span class="mi">78</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&quot;M&quot;</span><span class="p">,</span> <span class="mi">89</span><span class="p">)</span> _
+<span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>GetColumn : Obtenir la colonne</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">.</span><span class="n">getColumn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">ArraysOperations</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="n">a1</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">:</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">union</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">difference</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">symmetricDifference</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span> <span class="n">a</span> <span class="p">)</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tableaux</a><ul>
+<li><a class="reference internal" href="#append-ajouter-un-element">Append : Ajouter un élément</a></li>
+<li><a class="reference internal" href="#delete-supprimer-un-element">Delete : Supprimer un élément</a></li>
+<li><a class="reference internal" href="#extend-etendre-le-tableau">Extend : Etendre le tableau</a></li>
+<li><a class="reference internal" href="#multi-multiplier">Multi : Multiplier</a></li>
+<li><a class="reference internal" href="#unique-valeurs-uniques">Unique : Valeurs uniques</a></li>
+<li><a class="reference internal" href="#reverse-inverser">Reverse : Inverser</a></li>
+<li><a class="reference internal" href="#insert-inserer-un-element-a-une-position">Insert : Insérer un élément à une position</a></li>
+<li><a class="reference internal" href="#supprimer-un-element-a-une-position">Supprimer un élément à une position</a></li>
+<li><a class="reference internal" href="#len-taille-du-tableau">Len : Taille du tableau</a></li>
+<li><a class="reference internal" href="#count-compter-un-nombre-d-elements-du-tableau">Count : Compter un nombre d’éléments du tableau</a></li>
+<li><a class="reference internal" href="#index-index-d-un-element-du-tableau">Index : Index d’un élément du tableau</a></li>
+<li><a class="reference internal" href="#max-min-and-average-max-min-et-moyenne">Max, Min and Average : Max, Min et moyenne</a></li>
+<li><a class="reference internal" href="#sum-addition">Sum : Addition</a></li>
+<li><a class="reference internal" href="#exists-test-si-un-element-existe-dans-le-tableau">Exists : Test si un élément existe dans le tableau</a></li>
+<li><a class="reference internal" href="#equal-test-d-egalite-entre-deux-tableaux">Equal : Test d’égalité entre deux tableaux</a></li>
+<li><a class="reference internal" href="#slice-copie">Slice : Copie</a></li>
+<li><a class="reference internal" href="#sorted-tri-de-tableau">Sorted : Tri de tableau</a></li>
+<li><a class="reference internal" href="#operations">Operations</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="email.html" title="Chapitre précédent">Send mail</a></li>
+      <li>Next: <a href="requests.html" title="Chapitre suivant">Requests</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/arrays.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Mauricio Baeza.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/arrays.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

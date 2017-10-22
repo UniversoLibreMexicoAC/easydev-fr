@@ -1,0 +1,209 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Base de données &#8212; documentation EasyDev 2.0.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Diagrammes" href="libochart.html" />
+    <link rel="prev" title="Writer" href="libowriter.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="base-de-donnees">
+<h1>Base de données<a class="headerlink" href="#base-de-donnees" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="connexion-bd">
+<h2>Connexion BD<a class="headerlink" href="#connexion-bd" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Connexion à une base de données enregistrée dans Base.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">ConnectDB</span><span class="p">()</span>
+    <span class="n">db_name</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">pass</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">conDB</span><span class="p">(</span><span class="n">db_name</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">pass</span><span class="p">)</span>
+
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">con</span><span class="p">.</span><span class="n">isClosed</span><span class="p">())</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+<p>Verifier si la base existe.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">db_name</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span>
+<span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">existsDB</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Si elle existe, récupérer son chemin.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">db_name</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span>
+<span class="k">If</span> <span class="n">util</span><span class="p">.</span><span class="n">existsDB</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">getPathDB</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">If</span>
+</pre></div>
+</div>
+<p>Créer une B.D et l’enregistrer dans Base.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">path_db</span> <span class="o">=</span> <span class="s">&quot;/home/USER/dbtest.odb&quot;</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s">&quot;TestOne&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">newDB</span><span class="p">(</span><span class="n">path_db</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">registerDB</span><span class="p">(</span><span class="n">db_name</span><span class="p">,</span> <span class="n">path_db</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Révoquer une B.D dans Base.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">db_name</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">revokeDB</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="odbc">
+<h2>ODBC<a class="headerlink" href="#odbc" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Test connexion avec : MySQL, PostgreSQL, SQLite and MSSQL.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">ConexionODBC</span><span class="p">()</span>
+
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="n">odbc</span> <span class="o">=</span> <span class="s">&quot;ConSQL&quot;</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="s">&quot;sa&quot;</span>
+    <span class="n">passw</span> <span class="o">=</span> <span class="s">&quot;letmein&quot;</span>
+
+    <span class="n">con</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">conODBC</span><span class="p">(</span><span class="n">odbc</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">passw</span><span class="p">)</span>
+
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="requete">
+<span id="base-query"></span><h2>Requête<a class="headerlink" href="#requete" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Faire une requête, Obtenir des données comme tableaux</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">odbc</span> <span class="o">=</span> <span class="s">&quot;ODBCSQLITE&quot;</span>
+<span class="n">user</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">passw</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">con</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">conODBC</span><span class="p">(</span><span class="n">odbc</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">passw</span><span class="p">)</span>
+
+<span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;SELECT * FROM contactos&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Faire une requête, Obtenir des données comme resulset</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;SELECT * FROM contactos&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vous pouvez définir resulset vers grille, see <a class="reference internal" href="dialogs.html#grid"><span class="std std-ref">Grille</span></a>.</p>
+</div>
+<div class="section" id="mise-a-jour">
+<h2>Mise à jour<a class="headerlink" href="#mise-a-jour" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Insertion de données.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;INSERT INTO &quot;&quot;directory&quot;&quot; VALUES (6, &#39;Nikole Kidman&#39;, &#39;1970-01-15&#39;, &#39;nikole@correo.com&#39;)&quot;</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">sql</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Mise à jour de données.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;UPDATE &quot;&quot;directory&quot;&quot; SET &quot;&quot;email&quot;&quot;=&#39;nk@coreo.com&#39; WHERE &quot;&quot;id&quot;&quot;=6&quot;</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">sql</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Suppression de données.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;DELETE FROM &quot;&quot;directory&quot;&quot; WHERE &quot;&quot;id&quot;&quot;=5&quot;</span>
+<span class="n">row</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">sql</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Base de données</a><ul>
+<li><a class="reference internal" href="#connexion-bd">Connexion BD</a></li>
+<li><a class="reference internal" href="#odbc">ODBC</a></li>
+<li><a class="reference internal" href="#requete">Requête</a></li>
+<li><a class="reference internal" href="#mise-a-jour">Mise à jour</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="libowriter.html" title="Chapitre précédent">Writer</a></li>
+      <li>Next: <a href="libochart.html" title="Chapitre suivant">Diagrammes</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/libobase.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Mauricio Baeza.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/libobase.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

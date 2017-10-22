@@ -1,0 +1,615 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Outils &#8212; documentation EasyDev 2.0.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Envoi de courriel" href="email.html" />
+    <link rel="prev" title="Outils pour Debug" href="debug.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="outils">
+<h1>Outils<a class="headerlink" href="#outils" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="recuperer-infos-pc">
+<h2>Récupérer infos PC<a class="headerlink" href="#recuperer-infos-pc" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">ShowInfoPC</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="c">&#39;Système d&#39;exploitation</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">.</span><span class="n">OS</span><span class="p">)</span>
+
+    <span class="c">&#39;Nom de l&#39;&#39;aplication</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">.</span><span class="n">APP_NAME</span><span class="p">)</span>
+
+    <span class="c">&#39;Version de l&#39;application</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">.</span><span class="n">APP_VERSION</span><span class="p">)</span>
+
+    <span class="c">&#39;Langage de l&#39;&#39;application</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">.</span><span class="n">LANGUAGE</span><span class="p">)</span>
+
+    <span class="c">&#39;Taille Ecran</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">.</span><span class="n">getSizeScreen</span><span class="p">())</span>
+
+    <span class="c">&#39; https://docs.python.org/3.3/library/platform.html</span>
+    <span class="c">&#39; Get info PC:</span>
+    <span class="c">&#39; name user,</span>
+    <span class="c">&#39; name pc</span>
+    <span class="c">&#39; system/OS name,</span>
+    <span class="c">&#39; machine type,</span>
+    <span class="c">&#39; Returns the (real) processor name</span>
+    <span class="c">&#39; string identifying platform with as much useful information as possible,</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">.</span><span class="n">getInfoPC</span><span class="p">())</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="poser-une-question">
+<h2>Poser une question<a class="headerlink" href="#poser-une-question" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">Question</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;My App&quot;</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Is easy Python?&quot;</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">question</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+
+    <span class="c">&#39;If Yes return True, else return False</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rendu-de-chaine">
+<h2>Rendu de chaîne<a class="headerlink" href="#rendu-de-chaine" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Rendu de texte avec remplacement d’arguments.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">RenderString</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="c">&#39;Used NamedValue</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Hello $data with $language, from Basic 1!!&quot;</span>
+    <span class="k">Dim</span> <span class="n">data1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">com</span><span class="p">.</span><span class="n">sun</span><span class="p">.</span><span class="n">star</span><span class="p">.</span><span class="n">beans</span><span class="p">.</span><span class="n">NamedValue</span>
+
+    <span class="n">data1</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;data&quot;</span>
+    <span class="n">data1</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&quot;World&quot;</span>
+    <span class="n">data1</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;language&quot;</span>
+    <span class="n">data1</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&quot;Python&quot;</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">data1</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+    <span class="c">&#39;Used PropertyValue</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Hello $data with $language, from Basic 2!!&quot;</span>
+    <span class="k">Dim</span> <span class="n">data2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">com</span><span class="p">.</span><span class="n">sun</span><span class="p">.</span><span class="n">star</span><span class="p">.</span><span class="n">beans</span><span class="p">.</span><span class="n">PropertyValue</span>
+
+    <span class="n">data2</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;data&quot;</span>
+    <span class="n">data2</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&quot;World&quot;</span>
+    <span class="n">data2</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;language&quot;</span>
+    <span class="n">data2</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&quot;Python&quot;</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+    <span class="c">&#39;Used Arrays</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Hello $data with $language, from Basic 3!!&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+        <span class="n">Array</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span> <span class="s">&quot;World&quot;</span><span class="p">),</span> _
+        <span class="n">Array</span><span class="p">(</span><span class="s">&quot;language&quot;</span><span class="p">,</span> <span class="s">&quot;Python&quot;</span><span class="p">)</span> _
+    <span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">render</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">data2</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="format">
+<h2>Format<a class="headerlink" href="#format" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Voir plus d’info et d’exemples  <a class="reference external" href="https://pyformat.info/">here</a>.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">FormatData</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Hello {}&quot;</span><span class="p">,</span> <span class="s">&quot;World&quot;</span><span class="p">)</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Hello {} from {}&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">,</span> <span class="s">&quot;PyUNO&quot;</span><span class="p">))</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Hello {1} from {0}&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">,</span> <span class="s">&quot;PyUNO&quot;</span><span class="p">))</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:&lt;20}|{:^20}|{:&gt;20}&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Left&quot;</span><span class="p">,</span> <span class="s">&quot;Center&quot;</span><span class="p">,</span> <span class="s">&quot;Rigth&quot;</span><span class="p">))</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:_&lt;20}|{:-^20}|{:_&gt;20}&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Left&quot;</span><span class="p">,</span> <span class="s">&quot;Center&quot;</span><span class="p">,</span> <span class="s">&quot;Rigth&quot;</span><span class="p">))</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:d} {:f}&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">3.1416</span><span class="p">))</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{0:,.2f}&quot;</span><span class="p">,</span> <span class="mf">123456789.2468</span><span class="p">)</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Number {n1} y {n2}&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;one&quot;</span><span class="p">),</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">)))</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Number {n2} y {n1}&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;n1&quot;</span><span class="p">,</span> <span class="s">&quot;one&quot;</span><span class="p">),</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;n2&quot;</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">)))</span>
+
+    <span class="n">my_date</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;com.sun.star.util.Date&quot;</span><span class="p">)</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">1974</span>
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:%d-%B-%Y}&quot;</span><span class="p">,</span> <span class="n">my_date</span><span class="p">)</span>
+
+    <span class="n">my_date</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;com.sun.star.util.DateTime&quot;</span><span class="p">)</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Day</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Month</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Year</span> <span class="o">=</span> <span class="mi">1974</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Hours</span> <span class="o">=</span> <span class="mi">13</span>
+    <span class="n">my_date</span><span class="p">.</span><span class="n">Minutes</span> <span class="o">=</span> <span class="mi">30</span>
+
+    <span class="n">MsgBox</span> <span class="n">util</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:%Y-%b-%d %H:%M}&quot;</span><span class="p">,</span> <span class="n">my_date</span><span class="p">)</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fichiers-et-repertoires">
+<h2>Fichiers et répertoires<a class="headerlink" href="#fichiers-et-repertoires" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Retourner le nom du chemin dans la config. Voir <a class="reference external" href="http://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1util_1_1XPathSettings.html">XPathSettings</a>.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getPath</span><span class="p">(</span><span class="s">&quot;Temp&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getPath</span><span class="p">(</span><span class="s">&quot;Work&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Obtenir des infos du chemin: base, nom, nom sans extension, extension</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getPathInfo</span><span class="p">(</span><span class="s">&quot;/home/USER/log.txt&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Joindre des chemins</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">pathJoin</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;/home&quot;</span><span class="p">,</span> <span class="s">&quot;USER&quot;</span><span class="p">,</span> <span class="s">&quot;Documents&quot;</span><span class="p">))</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">pathJoin</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;/home/USER/Documents&quot;</span><span class="p">,</span> <span class="s">&quot;..&quot;</span><span class="p">,</span> <span class="s">&quot;Picture&quot;</span><span class="p">))</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sélectionner un répertoire, répertoire par défaut des documents user</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">folder</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getFolder</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+
+<span class="c">&#39;With other init folder</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getFolder</span><span class="p">(</span><span class="s">&quot;/home/USER&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sélectionner un fichier sans filtre</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getSelectedFiles</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="k">False</span><span class="p">,</span> <span class="n">Array</span><span class="p">())</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Selectionner plusieurs fichiers</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getSelectedFiles</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="n">Array</span><span class="p">())</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sélectionner plusieurs fichiers avec filtre</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">filters</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;TXT&quot;</span><span class="p">,</span> <span class="s">&quot;*.txt&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;LOG&quot;</span><span class="p">,</span> <span class="s">&quot;*.log&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;CER | KEY&quot;</span><span class="p">,</span> <span class="s">&quot;*.cer;*.key&quot;</span><span class="p">)</span> _
+<span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getSelectedFiles</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="n">filters</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Obtenir tous les fichiers récursivement</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getFiles</span><span class="p">(</span><span class="s">&quot;/home/USER/Pictures&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Obtenir tous les fichiers avec une extension</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getFiles</span><span class="p">(</span><span class="s">&quot;/home/USER/Pictures&quot;</span><span class="p">,</span> <span class="s">&quot;jpg&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getFiles</span><span class="p">(</span><span class="s">&quot;/home/USER/Pictures&quot;</span><span class="p">,</span> <span class="s">&quot;png&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ouvrir un fichier et lire tout son contenu</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">fileOpen</span><span class="p">(</span><span class="s">&quot;/home/USER/log.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ouvrir un fichier, lire les lignes dans un tableau</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">fileOpen</span><span class="p">(</span><span class="s">&quot;/home/USER/log.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sauvegarder les données dans un nouveau fichier
+.. code-block:: vbnet</p>
+<blockquote>
+<div>data = «&nbsp;Hello World Python&nbsp;»
+util.fileSave(«&nbsp;/home/USER/test.txt&nbsp;», «&nbsp;w&nbsp;», data)
+“Verify
+data = util.fileOpen(«&nbsp;/home/mau/test.txt&nbsp;», «&nbsp;r&nbsp;»)
+util.msgbox(data)</div></blockquote>
+<p>Sauvegarder les données en les ajoutant à un fichier</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="s">&quot;Hello World Python&quot;</span> <span class="o">&amp;</span> <span class="n">CHR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">fileSave</span><span class="p">(</span><span class="s">&quot;/home/USER/test2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="c">&#39;Verify</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">fileOpen</span><span class="p">(</span><span class="s">&quot;/home/USER/test2.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="executer">
+<h2>Exécuter<a class="headerlink" href="#executer" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Exécuter une commande et attendre la réponse</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="s">&quot;-la&quot;</span><span class="p">),</span> <span class="k">True</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Exécuter une commande sans attendre</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Array</span><span class="p">(</span><span class="s">&quot;gnome-calculator&quot;</span><span class="p">),</span> <span class="k">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="config">
+<h2>Config<a class="headerlink" href="#config" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Sauvegarder une valeur dans la config en permanence</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span><span class="p">.</span><span class="n">setConfig</span><span class="p">(</span><span class="s">&quot;DefaultMail&quot;</span><span class="p">,</span> <span class="s">&quot;test@correolibre.net&quot;</span><span class="p">)</span>
+<span class="c">&#39;Get value from config</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getConfig</span><span class="p">(</span><span class="s">&quot;DefaultMail&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Il est possible de sauvegarder des tableaux</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span><span class="p">.</span><span class="n">setConfig</span><span class="p">(</span><span class="s">&quot;Matriz&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getConfig</span><span class="p">(</span><span class="s">&quot;Matriz&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="clipboard">
+<h2>Clipboard<a class="headerlink" href="#clipboard" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Récupérer du texte du presse-papier</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getClipboard</span><span class="p">()</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Envoyer du texte au presse-papier</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span><span class="p">.</span><span class="n">setClipboard</span><span class="p">(</span><span class="s">&quot;Hello World PyUNO!!&quot;</span><span class="p">)</span>
+<span class="c">&#39;Verify</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getClipboard</span><span class="p">()</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Copier, coller. Actuellement seulement avec Calc. Copie la sélection courante.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="n">ThisComponent</span>
+<span class="n">util</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">paste</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/img021.png"><img alt="_images/img021.png" class="align-center" src="_images/img021.png" style="width: 300px;" /></a>
+<p>Copier et coller des plages de cellules. C’est très important, selectionner les plages correctement. Voir <a class="reference internal" href="libocalc.html#getranges"><span class="std std-ref">Plages</span></a>.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev.CellRangeAddress&quot;</span><span class="p">)</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev.CellRangeAddress&quot;</span><span class="p">)</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="n">ThisComponent</span>
+<span class="n">source</span><span class="p">.</span><span class="n">Doc</span> <span class="o">=</span> <span class="n">doc</span>
+<span class="n">source</span><span class="p">.</span><span class="n">Sheet</span> <span class="o">=</span> <span class="s">&quot;Sheet1&quot;</span>
+<span class="n">source</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;A1:B2&quot;</span>
+<span class="n">range</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">selectRange</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">range</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+
+<span class="n">target</span><span class="p">.</span><span class="n">Doc</span> <span class="o">=</span> <span class="n">doc</span>
+<span class="n">target</span><span class="p">.</span><span class="n">Sheet</span> <span class="o">=</span> <span class="s">&quot;Sheet1&quot;</span>
+<span class="n">target</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;A8&quot;</span>
+<span class="n">range</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getRange</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">selectRange</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">range</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">paste</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/img022.png"><img alt="_images/img022.png" class="align-center" src="_images/img022.png" style="width: 200px;" /></a>
+</div>
+<div class="section" id="unix-time">
+<h2>Unix time<a class="headerlink" href="#unix-time" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Look <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_time">https://en.wikipedia.org/wiki/Unix_time</a></p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">epoch</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getEpoch</span><span class="p">()</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="call-macros">
+<h2>Call macros<a class="headerlink" href="#call-macros" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Look: <a class="reference external" href="https://wiki.openoffice.org/wiki/Documentation/DevGuide/Scripting/Scripting_Framework_URI_Specification">Scripting Framework</a></p>
+<p>Pour le test sauvegarder la macro suivante dans:</p>
+<p><code class="docutils literal"><span class="pre">/home/USER/.config/libreoffice/4/user/Scripts/python/mymacros.py</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">uno</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">show_time</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">setString</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">&#39;</span><span class="p">))</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>Appeler une macro en Python (c’est le défaut), attendre la fin.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">macro</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev.Macro&quot;</span><span class="p">)</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Library</span> <span class="o">=</span> <span class="s">&quot;mymacros&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;show_time&quot;</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">CurrentSelection</span>
+<span class="n">util</span><span class="p">.</span><span class="n">callMacro</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/img005.png"><img alt="_images/img005.png" class="align-center" src="_images/img005.png" style="width: 400px;" /></a>
+<p>Appeler une macro en Python, sans attendre la fin</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">macro</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev.Macro&quot;</span><span class="p">)</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Library</span> <span class="o">=</span> <span class="s">&quot;mymacros&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;show_time&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Thread</span> <span class="o">=</span> <span class="k">True</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">CurrentSelection</span>
+<span class="n">util</span><span class="p">.</span><span class="n">callMacro</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Appeler une macro en Basic</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">macro</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev.Macro&quot;</span><span class="p">)</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Library</span> <span class="o">=</span> <span class="s">&quot;EasyDevLib&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Module</span> <span class="o">=</span> <span class="s">&quot;Examples&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;HelloWorld&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Language</span> <span class="o">=</span> <span class="s">&quot;Basic&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Thread</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">util</span><span class="p">.</span><span class="n">callMacro</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="n">Array</span><span class="p">())</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/img006.png"><img alt="_images/img006.png" class="align-center" src="_images/img006.png" style="width: 150px;" /></a>
+</div>
+<div class="section" id="timer">
+<h2>Timer<a class="headerlink" href="#timer" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Sauvegarder la macro suivante dans :</p>
+<p><code class="docutils literal"><span class="pre">/home/USER/.config/libreoffice/4/user/Scripts/python/mymacros.py</span></code></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">uno</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">show_time</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
+    <span class="n">cell</span><span class="o">.</span><span class="n">setString</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%c</span><span class="s1">&#39;</span><span class="p">))</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<p>timer(NAME_TIMER, SECONDS_WAIT, MACRO, ARGUMENTS)</p>
+<p>NAME_TIMER est important pour arrêter le timer. Timer s’exécute toujours dans un autre thread.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+<span class="c">&#39;Make data macro</span>
+<span class="n">macro</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev.Macro&quot;</span><span class="p">)</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Library</span> <span class="o">=</span> <span class="s">&quot;mymacros&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;show_time&quot;</span>
+<span class="c">&#39;Arguments</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">CurrentSelection</span>
+<span class="c">&#39;Timer name &quot;time&quot; and wait one second</span>
+<span class="n">util</span><span class="p">.</span><span class="n">timer</span><span class="p">(</span><span class="s">&quot;time&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">macro</span><span class="p">,</span> <span class="n">Array</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Arrêter le timer par le nom</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">StopTimer</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">stopTimer</span><span class="p">(</span><span class="s">&quot;time&quot;</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="export-csv">
+<h2>Export CSV<a class="headerlink" href="#export-csv" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Definir la plage avec données et sélection.</p>
+<a class="reference internal image-reference" href="_images/img007.png"><img alt="_images/img007.png" class="align-center" src="_images/img007.png" style="width: 400px;" /></a>
+<p>et exporter</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+<span class="n">range</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">CurrentSelection</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/home/USER/test.csv&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">range</span><span class="p">.</span><span class="n">getDataArray</span><span class="p">()</span>
+<span class="n">options</span> <span class="o">=</span> <span class="n">Array</span><span class="p">()</span>
+
+<span class="n">util</span><span class="p">.</span><span class="n">exportCSV</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Changer les options pour l’export, look: <a class="reference external" href="https://docs.python.org/3.3/library/csv.html#csv.writer">https://docs.python.org/3.3/library/csv.html#csv.writer</a></p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Dim</span> <span class="n">options</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">com</span><span class="p">.</span><span class="n">sun</span><span class="p">.</span><span class="n">star</span><span class="p">.</span><span class="n">beans</span><span class="p">.</span><span class="n">NamedValue</span>
+
+<span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+<span class="n">range</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">CurrentSelection</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/home/USER/test.csv&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">range</span><span class="p">.</span><span class="n">getDataArray</span><span class="p">()</span>
+<span class="n">options</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;delimiter&quot;</span>
+<span class="n">options</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Value</span> <span class="o">=</span> <span class="s">&quot;|&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">exportCSV</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-csv">
+<h2>Import CSV<a class="headerlink" href="#import-csv" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La plage sélectionnée doit être le nombre exact de colonnes et de lignes à
+importer, seulement pour cet exemple.</p>
+<p>More options see: <a class="reference external" href="https://docs.python.org/3.3/library/csv.html#csv.reader">https://docs.python.org/3.3/library/csv.html#csv.reader</a></p>
+<a class="reference internal image-reference" href="_images/img016.png"><img alt="_images/img016.png" class="align-center" src="_images/img016.png" style="width: 400px;" /></a>
+<p>et importer</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+<span class="n">range</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">CurrentSelection</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/home/USER/test.csv&quot;</span>
+<span class="n">options</span> <span class="o">=</span> <span class="n">Array</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">importCSV</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+<span class="n">range</span><span class="p">.</span><span class="n">setDataArray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/img017.png"><img alt="_images/img017.png" class="align-center" src="_images/img017.png" style="width: 400px;" /></a>
+<p>Il est possible de calculer automatiquement la taille de la plage de
+données, voir <a class="reference internal" href="libocalc.html#setdata"><span class="std std-ref">Définir des données</span></a> .</p>
+</div>
+<div class="section" id="compresser-fichiers-et-dossiers">
+<h2>Compresser fichiers et dossiers<a class="headerlink" href="#compresser-fichiers-et-dossiers" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Compresser fichier , écrire dans le même répertoire avec le même nom.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="s">&quot;/home/mau/Documents/debug.log&quot;</span>
+<span class="c">&#39;Target = &quot;/home/mau/Documents/debug.zip&quot;</span>
+<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compresser fichier dans un autre répertoire, même nom.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s">&quot;/home/mau/Documents/debug.log&quot;</span>
+<span class="c">&#39;Target = &quot;/home/mau/debug.zip&quot;</span>
+<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;/home/mau&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compresser fichier dans un autre répertoire avec un autre nom.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s">&quot;/home/mau/Documents/debug.log&quot;</span>
+<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;/home/mau/test.zip&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compresser dossier</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s">&quot;/home/mau/Pictures&quot;</span>
+<span class="c">&#39;Target = &quot;/home/mau/Pictures.zip&quot;</span>
+<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+<span class="c">&#39;Target = &quot;/home/mau/Documents/Pictures.zip&quot;</span>
+<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;/home/mau/Documents&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;/home/mau/Documents/pic.zip&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unzip">
+<h2>Unzip<a class="headerlink" href="#unzip" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Décompresser fichier, extraire tout le contenu.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="s">&quot;/home/mau/Documents/Pictures.zip&quot;</span>
+<span class="n">target</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">unzip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Extraire dans un autre dossier.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="s">&quot;/home/mau&quot;</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">unzip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Extraire seulement un fichier.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="s">&quot;/home/mau&quot;</span>
+<span class="n">file_name</span> <span class="o">=</span> <span class="s">&quot;mylove.png&quot;</span>
+<span class="n">util</span><span class="p">.</span><span class="n">unzip</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<span class="target" id="set-data"></span></div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Outils</a><ul>
+<li><a class="reference internal" href="#recuperer-infos-pc">Récupérer infos PC</a></li>
+<li><a class="reference internal" href="#poser-une-question">Poser une question</a></li>
+<li><a class="reference internal" href="#rendu-de-chaine">Rendu de chaîne</a></li>
+<li><a class="reference internal" href="#format">Format</a></li>
+<li><a class="reference internal" href="#fichiers-et-repertoires">Fichiers et répertoires</a></li>
+<li><a class="reference internal" href="#executer">Exécuter</a></li>
+<li><a class="reference internal" href="#config">Config</a></li>
+<li><a class="reference internal" href="#clipboard">Clipboard</a></li>
+<li><a class="reference internal" href="#unix-time">Unix time</a></li>
+<li><a class="reference internal" href="#call-macros">Call macros</a></li>
+<li><a class="reference internal" href="#timer">Timer</a></li>
+<li><a class="reference internal" href="#export-csv">Export CSV</a></li>
+<li><a class="reference internal" href="#import-csv">Import CSV</a></li>
+<li><a class="reference internal" href="#compresser-fichiers-et-dossiers">Compresser fichiers et dossiers</a></li>
+<li><a class="reference internal" href="#unzip">Unzip</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="debug.html" title="Chapitre précédent">Outils pour Debug</a></li>
+      <li>Next: <a href="email.html" title="Chapitre suivant">Envoi de courriel</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tools.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Mauricio Baeza.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/tools.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

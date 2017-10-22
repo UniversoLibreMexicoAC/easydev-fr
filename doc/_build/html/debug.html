@@ -1,0 +1,182 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Outils pour Debug &#8212; documentation EasyDev 2.0.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Tools" href="tools.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="outils-pour-debug">
+<h1>Outils pour Debug<a class="headerlink" href="#outils-pour-debug" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="debug-montrer-des-traces-dans-une-console">
+<h2>Debug : Montrer des traces dans une console<a class="headerlink" href="#debug-montrer-des-traces-dans-une-console" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Seulement sous Linux</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">Debug</span><span class="p">()</span>
+    <span class="c">&#39;Create service</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="n">util</span><span class="p">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;Test debug&quot;</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/img002.png"><img alt="_images/img002.png" class="align-center" src="_images/img002.png" style="width: 500px;" /></a>
+<p>Sous windows, vous pouvez ouvrir un nouveau document Writer, le sauvegarder
+avec comme nom <strong>debug.odt</strong> et montrer des traces de debug dans ce document.</p>
+<a class="reference internal image-reference" href="_images/img003.png"><img alt="_images/img003.png" class="align-center" src="_images/img003.png" style="width: 500px;" /></a>
+</div>
+<div class="section" id="log-sauvegarder-des-traces-de-debug-dans-un-fichier-de-log">
+<h2>Log : Sauvegarder des traces de debug dans un fichier de log<a class="headerlink" href="#log-sauvegarder-des-traces-de-debug-dans-un-fichier-de-log" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">LogFile</span><span class="p">()</span>
+
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="n">util</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">&quot;/home/USER/log.txt&quot;</span><span class="p">,</span> <span class="n">util</span><span class="p">)</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+<p>Ajoute automatiquement la date et l’heure dans les traces.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">2015</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">20</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">35</span> <span class="o">-</span> <span class="n">EasyDev</span> <span class="o">-</span> <span class="o">&lt;</span><span class="n">uno_component</span><span class="o">.</span><span class="n">EasyDev</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f96caf34438</span><span class="o">&gt;</span>
+<span class="mi">2015</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">20</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">41</span> <span class="o">-</span> <span class="n">EasyDev</span> <span class="o">-</span> <span class="o">&lt;</span><span class="n">uno_component</span><span class="o">.</span><span class="n">EasyDev</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f96caf34438</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="msgbox-messagebox-speciale-pour-afficher-toute-sorte-de-variables">
+<h2>Msgbox : MessageBox spéciale pour afficher toute sorte de variables<a class="headerlink" href="#msgbox-messagebox-speciale-pour-afficher-toute-sorte-de-variables" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Afficher tout type de données dans msgbox comme des objets ou des tableaux.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">MessageBox</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="c">&#39;Show info in message box</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="s">&quot;Debug data&quot;</span><span class="p">)</span>
+
+    <span class="c">&#39;Show any data</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="s">&quot;This is string&quot;</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="mi">12345</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">util</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="callmri-appeler-mri">
+<h2>CallMRI : Appeler MRI<a class="headerlink" href="#callmri-appeler-mri" title="Lien permanent vers ce titre">¶</a></h2>
+<p>MRI is the best extension for introspeccion of objects for Apache OpenOffice
+and LibreOffice. <a class="reference external" href="http://extensions.openoffice.org/en/project/MRI">Download</a> and install.</p>
+<p>Appel à partir d” EasyDev.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">CallMRI</span><span class="p">()</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="c">&#39;MRI is a great extension</span>
+    <span class="n">util</span><span class="p">.</span><span class="n">mri</span><span class="p">(</span><span class="n">util</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/img004.png"><img alt="_images/img004.png" class="align-center" src="_images/img004.png" style="width: 500px;" /></a>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Outils pour Debug</a><ul>
+<li><a class="reference internal" href="#debug-montrer-des-traces-dans-une-console">Debug : Montrer des traces dans une console</a></li>
+<li><a class="reference internal" href="#log-sauvegarder-des-traces-de-debug-dans-un-fichier-de-log">Log : Sauvegarder des traces de debug dans un fichier de log</a></li>
+<li><a class="reference internal" href="#msgbox-messagebox-speciale-pour-afficher-toute-sorte-de-variables">Msgbox : MessageBox spéciale pour afficher toute sorte de variables</a></li>
+<li><a class="reference internal" href="#callmri-appeler-mri">CallMRI : Appeler MRI</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="intro.html" title="Chapitre précédent">Introduction</a></li>
+      <li>Next: <a href="tools.html" title="Chapitre suivant">Tools</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/debug.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Mauricio Baeza.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/debug.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

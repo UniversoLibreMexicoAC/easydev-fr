@@ -1,0 +1,307 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fenêtres de dialogue &#8212; documentation EasyDev 2.0.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Insertion d’image" href="liboimage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fenetres-de-dialogue">
+<h1>Fenêtres de dialogue<a class="headerlink" href="#fenetres-de-dialogue" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="creation-de-fenetres-de-dialogue">
+<h2>Création de fenêtres de dialogue<a class="headerlink" href="#creation-de-fenetres-de-dialogue" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Création d’une fenêtre de dialogue à partir d’un fichier.</p>
+<a class="reference internal image-reference" href="_images/img010.png"><img alt="_images/img010.png" class="align-center" src="_images/img010.png" style="width: 400px;" /></a>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">CreateDialog</span>
+    <span class="n">util</span> <span class="o">=</span> <span class="n">createUnoService</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev&quot;</span><span class="p">)</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/home/USER/dlg_test.xdl&quot;</span>
+    <span class="n">dlg</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">createDialog</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">dlg</span><span class="p">.</span><span class="n">execute</span><span class="p">()</span>
+    <span class="n">dlg</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+<p>Création d’une fenêtre de dialogue à partir d’une bibliothèque; celle par défaut est <strong>Standard</strong></p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">macro</span> <span class="o">=</span> <span class="n">createUnoStruct</span><span class="p">(</span><span class="s">&quot;org.universolibre.EasyDev.Macro&quot;</span><span class="p">)</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Dialog</span> <span class="o">=</span> <span class="s">&quot;Dialog1&quot;</span>
+
+<span class="n">dlg</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">createDialog</span><span class="p">(</span><span class="n">macro</span><span class="p">)</span>
+
+<span class="c">&#39;Use other library</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Library</span> <span class="o">=</span> <span class="s">&quot;MyLibrary&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Dialog</span> <span class="o">=</span> <span class="s">&quot;MyDialog&quot;</span>
+
+<span class="n">dlg</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">createDialog</span><span class="p">(</span><span class="n">macro</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Si la fenêtre de dialogue est dans un document, utiliser la méthode createUnoDialog</p>
+</div>
+</div>
+<div class="section" id="label-hyperlien">
+<h2>Label hyperlien<a class="headerlink" href="#label-hyperlien" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Evénément souris dessus créé automatiquement</p>
+<a class="reference internal image-reference" href="_images/img011.png"><img alt="_images/img011.png" class="align-center" src="_images/img011.png" style="width: 350px;" /></a>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/home/USER/dlg_test.xdl&quot;</span>
+<span class="n">dlg</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">createDialog</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="n">properties</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">,</span> <span class="s">&quot;link_home&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionX&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionY&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;URL&quot;</span><span class="p">,</span> <span class="s">&quot;http://universolibre.org&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Label&quot;</span><span class="p">,</span> <span class="s">&quot;http://universolibre.org&quot;</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">createControl</span><span class="p">(</span><span class="n">dlg</span><span class="p">,</span> <span class="s">&quot;FixedHyperlink&quot;</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+<span class="n">dlg</span><span class="p">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">dlg</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="roadmap">
+<h2>Roadmap<a class="headerlink" href="#roadmap" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ajouter des options de menus</p>
+<a class="reference internal image-reference" href="_images/img012.png"><img alt="_images/img012.png" class="align-center" src="_images/img012.png" style="width: 200px;" /></a>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s">&quot;/home/USER/dlg_test.xdl&quot;</span>
+<span class="n">dlg</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">createDialog</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="n">options</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Init&quot;</span><span class="p">,</span> <span class="s">&quot;Values&quot;</span><span class="p">,</span> <span class="s">&quot;Config&quot;</span><span class="p">,</span> <span class="s">&quot;Other&quot;</span><span class="p">)</span>
+<span class="n">properties</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">,</span> <span class="s">&quot;roadmap&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Width&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Height&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Options&quot;</span><span class="p">,</span> <span class="n">options</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">createControl</span><span class="p">(</span><span class="n">dlg</span><span class="p">,</span> <span class="s">&quot;Roadmap&quot;</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+<span class="n">dlg</span><span class="p">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">dlg</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="grille">
+<span id="grid"></span><h2>Grille<a class="headerlink" href="#grille" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Créer une grille et mettre des données d’un tableau. Détecter les valeurs de colonnes et le format.</p>
+<a class="reference internal image-reference" href="_images/img013.png"><img alt="_images/img013.png" class="align-center" src="_images/img013.png" style="width: 300px;" /></a>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Title&quot;</span><span class="p">,</span> <span class="s">&quot;State&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;HorizontalAlign&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Title&quot;</span><span class="p">,</span> <span class="s">&quot;People&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;HorizontalAlign&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Identifier&quot;</span><span class="p">,</span> <span class="k">True</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">)</span>
+<span class="n">properties</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">,</span> <span class="s">&quot;grid&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionX&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionY&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Step&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Columns&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">createControl</span><span class="p">(</span><span class="n">dlg</span><span class="p">,</span> <span class="s">&quot;Grid&quot;</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span> <span class="mi">2222</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Tres&quot;</span><span class="p">,</span> <span class="mi">44444</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Cinco&quot;</span><span class="p">,</span> <span class="mi">666666</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Siete&quot;</span><span class="p">,</span> <span class="mi">666666</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">col_format</span> <span class="o">=</span> <span class="n">Array</span><span class="p">()</span>
+<span class="n">util</span><span class="p">.</span><span class="n">setGridData</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">col_format</span><span class="p">)</span>
+
+<span class="n">dlg</span><span class="p">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">dlg</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ajouter des données à une plage de cellules.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">getCurrentSelection</span><span class="p">().</span><span class="n">getDataarray</span><span class="p">()</span>
+<span class="n">col_format</span> <span class="o">=</span> <span class="n">Array</span><span class="p">()</span>
+<span class="n">util</span><span class="p">.</span><span class="n">setGridData</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">col_format</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Définir des données à partir d’une requête, voir <a class="reference internal" href="libobase.html#base-query"><span class="std std-ref">Requête</span></a>.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">odbc</span> <span class="o">=</span> <span class="s">&quot;TESTODBCSQLITE&quot;</span>
+<span class="n">user</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">passw</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+<span class="n">con</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">conODBC</span><span class="p">(</span><span class="n">odbc</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">passw</span><span class="p">)</span>
+
+<span class="n">sql</span> <span class="o">=</span> <span class="s">&quot;SELECT id, name FROM contactos&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">con</span><span class="p">,</span> <span class="n">sql</span><span class="p">,</span> <span class="k">False</span><span class="p">)</span>
+<span class="n">properties</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">,</span> <span class="s">&quot;grid&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionX&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionY&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Columns&quot;</span><span class="p">,</span> <span class="n">Array</span><span class="p">())</span> _
+<span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">createControl</span><span class="p">(</span><span class="n">dlg</span><span class="p">,</span> <span class="s">&quot;Grid&quot;</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">setQuery</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="k">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Changer le format par défaut pour les colonnes avec valeurs.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">getCurrentSelection</span><span class="p">().</span><span class="n">getDataarray</span><span class="p">()</span>
+
+<span class="c">&#39;Default format</span>
+<span class="n">util</span><span class="p">.</span><span class="n">numfmt</span> <span class="o">=</span> <span class="s">&quot;$ {0:,.2f}&quot;</span>
+
+<span class="n">col_format</span> <span class="o">=</span> <span class="n">Array</span><span class="p">()</span>
+<span class="n">util</span><span class="p">.</span><span class="n">setGridData</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">col_format</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ou changer le format pour chaque colonne.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">ThisComponent</span><span class="p">.</span><span class="n">getCurrentSelection</span><span class="p">().</span><span class="n">getDataarray</span><span class="p">()</span>
+<span class="n">col_format</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span> <span class="s">&quot;$ {0:,.2f}&quot;</span><span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">setGridData</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">col_format</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>et obtenir la grille de données en tableau.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">util</span><span class="p">.</span><span class="n">getGridData</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">Array</span><span class="p">())</span>
+<span class="n">util</span><span class="p">.</span><span class="n">msgbox</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="textbox">
+<h2>TextBox<a class="headerlink" href="#textbox" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Créer une text box, automatic changer couleur de fond sur focus.</p>
+<a class="reference internal image-reference" href="_images/img014.png"><img alt="_images/img014.png" class="align-center" src="_images/img014.png" style="width: 300px;" /></a>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">properties</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">,</span> <span class="s">&quot;txt_name&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionX&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionY&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">createControl</span><span class="p">(</span><span class="n">dlg</span><span class="p">,</span> <span class="s">&quot;Edit&quot;</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+<span class="n">dlg</span><span class="p">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">dlg</span><span class="p">.</span><span class="n">dispose</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Vous pouvez changer la couleur de fond par défaut. Changer la couleur avant la création du contrôle.</p>
+<a class="reference internal image-reference" href="_images/img015.png"><img alt="_images/img015.png" class="align-center" src="_images/img015.png" style="width: 300px;" /></a>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">util</span><span class="p">.</span><span class="n">colorOnFocus</span> <span class="o">=</span> <span class="n">RGB</span><span class="p">(</span><span class="mi">229</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">204</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commandbutton">
+<h2>CommandButton<a class="headerlink" href="#commandbutton" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Créer un bouton de commande et lui assigner une macro à exécuter. La bibliothèque par défaut est <strong>Standard</strong>.
+Par défaut, le nom de la macro : <strong>CONTROL_NAME + _action</strong>, dans cet exemple:</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="k">Sub</span> <span class="nf">cmd_test_action</span><span class="p">(</span><span class="k">event</span><span class="p">):</span>
+    <span class="n">MsgBox</span> <span class="k">event</span><span class="p">.</span><span class="n">Source</span><span class="p">.</span><span class="n">Model</span><span class="p">.</span><span class="n">Name</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</pre></div>
+</div>
+<p>Argument <strong>event</strong> is important.</p>
+<div class="highlight-vbnet"><div class="highlight"><pre><span></span><span class="n">macro</span><span class="p">.</span><span class="n">Language</span> <span class="o">=</span> <span class="s">&quot;Basic&quot;</span>
+<span class="n">macro</span><span class="p">.</span><span class="n">Module</span> <span class="o">=</span> <span class="s">&quot;LODialog&quot;</span>
+<span class="n">properties</span> <span class="o">=</span> <span class="n">Array</span><span class="p">(</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">,</span> <span class="s">&quot;cmd_test&quot;</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionX&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;PositionY&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span> _
+    <span class="n">Array</span><span class="p">(</span><span class="s">&quot;Macro&quot;</span><span class="p">,</span> <span class="n">macro</span><span class="p">),</span> _
+<span class="p">)</span>
+<span class="n">util</span><span class="p">.</span><span class="n">createControl</span><span class="p">(</span><span class="n">dlg</span><span class="p">,</span> <span class="s">&quot;Button&quot;</span><span class="p">,</span> <span class="n">properties</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table des Matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Fenêtres de dialogue</a><ul>
+<li><a class="reference internal" href="#creation-de-fenetres-de-dialogue">Création de fenêtres de dialogue</a></li>
+<li><a class="reference internal" href="#label-hyperlien">Label hyperlien</a></li>
+<li><a class="reference internal" href="#roadmap">Roadmap</a></li>
+<li><a class="reference internal" href="#grille">Grille</a></li>
+<li><a class="reference internal" href="#textbox">TextBox</a></li>
+<li><a class="reference internal" href="#commandbutton">CommandButton</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="liboimage.html" title="Chapitre précédent">Insertion d’image</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/dialogs.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Mauricio Baeza.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/dialogs.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
